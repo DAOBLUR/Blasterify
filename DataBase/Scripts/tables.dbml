@@ -1,0 +1,381 @@
+
+Table "Subscription" {
+  "Id" int [pk, not null]
+  "Name" varchar(20) [not null]
+  "Price" number(5,2) [not null]
+  "Features" clob [not null]
+}
+
+Table "Country" {
+  "Id" varchar(4) [pk, not null]
+  "Name" varchar(30) [not null]
+}
+
+Table "User_Client" {
+  "Id" int [pk, not null]
+  "Name" varchar(40)
+  "Card_Number" varchar(16)
+  "Status" number(1) [not null]
+  "Email" varchar(35) [unique, not null]
+  "Password" varchar(50)
+  "Subscription_Date" date [not null]
+  "Id_Subscription" int [not null]
+  "Id_Country" varchar(4) [not null]
+}
+
+Table "Genre" {
+  "Id" int [pk, not null]
+  "Name" varchar(20)
+}
+
+Table "Director" {
+  "Id" int [pk, not null]
+  "Name" varchar(40)
+}
+
+Table "Writer" {
+  "Id" int [pk, not null]
+  "Name" varchar(40)
+}
+
+Table "Actor" {
+  "Id" int [pk, not null]
+  "Name" varchar(40)
+}
+
+Table "Character" {
+  "Id" int [pk, not null]
+  "Name" varchar(40)
+}
+
+Table "Character_Actor" {
+  "Character_Id" int [not null]
+  "Actor_Id" int [not null]
+
+Indexes {
+  (Character_Id, Actor_Id) [pk]
+}
+}
+
+Table "Producer" {
+  "Id" int [pk, not null]
+  "Name" varchar(40)
+}
+
+Table "Composer" {
+  "Id" int [pk, not null]
+  "Name" varchar(40)
+}
+
+Table "Language" {
+  "Id" int [pk, not null]
+  "Name" varchar(20)
+}
+
+Table "Subtitle" {
+  "Id" int [pk, not null]
+  "Name_Language" varchar(20)
+}
+
+Table "Age_Restriction" {
+  "Id" int [pk, not null]
+  "Age" number(2) [not null]
+  "Description" clob
+}
+
+Table "Music" {
+  "Id" int [pk, not null]
+  "Title" varchar(60) [not null]
+  "Duration" number(3) [not null]
+  "Rate" number(3,2) [not null]
+}
+
+Table "Music_Composer" {
+  "Music_Id" int [not null]
+  "Composer_Id" int [not null]
+
+Indexes {
+  (Music_Id, Composer_Id) [pk]
+}
+}
+
+Table "Multimedia" {
+  "Id" int [pk, not null]
+  "Title" varchar(60) [not null]
+  "Duration" number(5) [not null]
+  "Description" clob [not null]
+  "Premiere_Date" date [not null]
+  "Rate" number(3,2) [not null]
+  "Sequel_Id" int
+  "Prequel_Id" int
+}
+
+Table "Spin_Off" {
+  "Spin_Off_Id" int [not null]
+  "Original_Id" int [not null]
+
+Indexes {
+  (Spin_Off_Id, Original_Id) [pk]
+}
+}
+
+Table "Multimedia_Genre" {
+  "Multimedia_Id" int [not null]
+  "Genre_Id" int [not null]
+
+Indexes {
+  (Multimedia_Id, Genre_Id) [pk]
+}
+}
+
+Table "Multimedia_Actor" {
+  "Multimedia_Id" int [not null]
+  "Actor_Id" int [not null]
+
+Indexes {
+  (Multimedia_Id, Actor_Id) [pk]
+}
+}
+
+Table "Multimedia_Character" {
+  "Multimedia_Id" int [not null]
+  "Character_Id" int [not null]
+
+Indexes {
+  (Multimedia_Id, Character_Id) [pk]
+}
+}
+
+Table "Multimedia_Producer" {
+  "Multimedia_Id" int [not null]
+  "Producer_Id" int [not null]
+
+Indexes {
+  (Multimedia_Id, Producer_Id) [pk]
+}
+}
+
+Table "Multimedia_Music" {
+  "Multimedia_Id" int [not null]
+  "Music_Id" int [not null]
+
+Indexes {
+  (Multimedia_Id, Music_Id) [pk]
+}
+}
+
+Table "Movie" {
+  "Id" int [pk, not null]
+  "Age_Restriction_Id" int [not null]
+}
+
+Table "Movie_Director" {
+  "Movie_Id" int [not null]
+  "Director_Id" int [not null]
+
+Indexes {
+  (Movie_Id, Director_Id) [pk]
+}
+}
+
+Table "Movie_Writer" {
+  "Movie_Id" int [not null]
+  "Writer_Id" int [not null]
+
+Indexes {
+  (Movie_Id, Writer_Id) [pk]
+}
+}
+
+Table "Movie_Language" {
+  "Movie_Id" int [not null]
+  "Language_Id" int [not null]
+
+Indexes {
+  (Movie_Id, Language_Id) [pk]
+}
+}
+
+Table "Movie_Subtitle" {
+  "Movie_Id" int [not null]
+  "Subtitle_Id" int [not null]
+
+Indexes {
+  (Movie_Id, Subtitle_Id) [pk]
+}
+}
+
+Table "MovieHistory" {
+  "User_Id" int [not null]
+  "Movie_Id" int [not null]
+  "Stop_Iime" interval [not null]
+
+Indexes {
+  (User_Id, Movie_Id) [pk]
+}
+}
+
+Table "Serie" {
+  "Id" int [pk, not null]
+  "Seasons" number(3) [not null]
+}
+
+Table "Season" {
+  "Id" int [pk, not null]
+  "Premiere_Date" date [not null]
+  "Name" varchar(60)
+  "Description" clob
+  "Chapters" number(4) [not null]
+  "Serie_Id" int [not null]
+}
+
+Table "Chapter" {
+  "Id" int [pk, not null]
+  "Chapter_Number" number(4) [not null]
+  "Duration" number(3) [not null]
+  "Name" varchar(60)
+  "Description" clob
+  "Serie_Id" int [not null]
+  "Season_Id" int [not null]
+  "Age_Restriction_Id" int [not null]
+}
+
+Table "Chapter_Director" {
+  "Chapter_Id" int [not null]
+  "Director_Id" int [not null]
+
+Indexes {
+  (Chapter_Id, Director_Id) [pk]
+}
+}
+
+Table "Chapter_Writer" {
+  "Chapter_Id" int [not null]
+  "Writer_Id" int [not null]
+
+Indexes {
+  (Chapter_Id, Writer_Id) [pk]
+}
+}
+
+Table "Chapter_Language" {
+  "Chapter_Id" int [not null]
+  "Language_Id" int [not null]
+
+Indexes {
+  (Chapter_Id, Language_Id) [pk]
+}
+}
+
+Table "Chapter_Subtitle" {
+  "Chapter_Id" int [not null]
+  "Subtitle_Id" int [not null]
+
+Indexes {
+  (Chapter_Id, Subtitle_Id) [pk]
+}
+}
+
+Table "ChapterHistory" {
+  "User_Id" int [not null]
+  "Chapter_Id" int [not null]
+  "Stop_Iime" interval [not null]
+
+Indexes {
+  (User_Id, Chapter_Id) [pk]
+}
+}
+
+Ref:"Subscription"."Id" < "User_Client"."Id_Subscription"
+
+Ref:"Country"."Id" < "User_Client"."Id_Country"
+
+Ref:"Character"."Id" < "Character_Actor"."Character_Id"
+
+Ref:"Actor"."Id" < "Character_Actor"."Actor_Id"
+
+Ref:"Music"."Id" < "Music_Composer"."Music_Id"
+
+Ref:"Composer"."Id" < "Music_Composer"."Composer_Id"
+
+Ref:"Multimedia"."Id" < "Multimedia"."Sequel_Id"
+
+Ref:"Multimedia"."Id" < "Multimedia"."Prequel_Id"
+
+Ref:"Multimedia"."Id" < "Spin_Off"."Spin_Off_Id"
+
+Ref:"Multimedia"."Id" < "Spin_Off"."Original_Id"
+
+Ref:"Multimedia"."Id" < "Multimedia_Genre"."Multimedia_Id"
+
+Ref:"Genre"."Id" < "Multimedia_Genre"."Genre_Id"
+
+Ref:"Multimedia"."Id" < "Multimedia_Actor"."Multimedia_Id"
+
+Ref:"Actor"."Id" < "Multimedia_Actor"."Actor_Id"
+
+Ref:"Multimedia"."Id" < "Multimedia_Character"."Multimedia_Id"
+
+Ref:"Character"."Id" < "Multimedia_Character"."Character_Id"
+
+Ref:"Multimedia"."Id" < "Multimedia_Producer"."Multimedia_Id"
+
+Ref:"Producer"."Id" < "Multimedia_Producer"."Producer_Id"
+
+Ref:"Multimedia"."Id" < "Multimedia_Music"."Multimedia_Id"
+
+Ref:"Music"."Id" < "Multimedia_Music"."Music_Id"
+
+Ref:"Multimedia"."Id" < "Movie"."Id"
+
+Ref:"Age_Restriction"."Id" < "Movie"."Age_Restriction_Id"
+
+Ref:"Movie"."Id" < "Movie_Director"."Movie_Id"
+
+Ref:"Director"."Id" < "Movie_Director"."Director_Id"
+
+Ref:"Movie"."Id" < "Movie_Writer"."Movie_Id"
+
+Ref:"Writer"."Id" < "Movie_Writer"."Writer_Id"
+
+Ref:"Movie"."Id" < "Movie_Language"."Movie_Id"
+
+Ref:"Language"."Id" < "Movie_Language"."Language_Id"
+
+Ref:"Movie"."Id" < "Movie_Subtitle"."Movie_Id"
+
+Ref:"Subtitle"."Id" < "Movie_Subtitle"."Subtitle_Id"
+
+Ref:"User_Client"."Id" < "MovieHistory"."User_Id"
+
+Ref:"Movie"."Id" < "MovieHistory"."Movie_Id"
+
+Ref:"Multimedia"."Id" < "Serie"."Id"
+
+Ref:"Serie"."Id" < "Season"."Serie_Id"
+
+Ref:"Age_Restriction"."Id" < "Chapter"."Age_Restriction_Id"
+
+Ref:"Serie"."Id" < "Chapter"."Serie_Id"
+
+Ref:"Season"."Id" < "Chapter"."Season_Id"
+
+Ref:"Chapter"."Id" < "Chapter_Director"."Chapter_Id"
+
+Ref:"Director"."Id" < "Chapter_Director"."Director_Id"
+
+Ref:"Chapter"."Id" < "Chapter_Writer"."Chapter_Id"
+
+Ref:"Writer"."Id" < "Chapter_Writer"."Writer_Id"
+
+Ref:"Chapter"."Id" < "Chapter_Language"."Chapter_Id"
+
+Ref:"Language"."Id" < "Chapter_Language"."Language_Id"
+
+Ref:"Chapter"."Id" < "Chapter_Subtitle"."Chapter_Id"
+
+Ref:"Subtitle"."Id" < "Chapter_Subtitle"."Subtitle_Id"
+
+Ref:"User_Client"."Id" < "ChapterHistory"."User_Id"
+
+Ref:"Chapter"."Id" < "ChapterHistory"."Chapter_Id"

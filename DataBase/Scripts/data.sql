@@ -712,26 +712,26 @@ INSERT INTO Movie_Subtitle (Movie_Id, Subtitle_Id) VALUES (10, 10);
 INSERT INTO Movie_Subtitle (Movie_Id, Subtitle_Id) VALUES (1, 10);
 
 ----------------------------------------------------------------------
---          MovieHistory
+--          Movie_History
 ----------------------------------------------------------------------
 BEGIN
-  DBMS_OUTPUT.PUT_LINE('MovieHistory');
+  DBMS_OUTPUT.PUT_LINE('Movie_History');
 END;
 /
 --25 min and 20 sec.
 
-INSERT INTO MovieHistory (User_Id, Movie_Id, Stop_Iime) VALUES (1, 1, interval '00:25:20' hour to second);
-INSERT INTO MovieHistory (User_Id, Movie_Id, Stop_Iime) VALUES (1, 2, interval '00:25:20' hour to second);
-INSERT INTO MovieHistory (User_Id, Movie_Id, Stop_Iime) VALUES (1, 3, interval '00:25:20' hour to second);
-INSERT INTO MovieHistory (User_Id, Movie_Id, Stop_Iime) VALUES (1, 4, interval '00:25:20' hour to second);
-INSERT INTO MovieHistory (User_Id, Movie_Id, Stop_Iime) VALUES (1, 5, interval '00:25:20' hour to second);
-INSERT INTO MovieHistory (User_Id, Movie_Id, Stop_Iime) VALUES (1, 6, interval '00:25:20' hour to second);
-INSERT INTO MovieHistory (User_Id, Movie_Id, Stop_Iime) VALUES (2, 3, interval '00:25:20' hour to second);
-INSERT INTO MovieHistory (User_Id, Movie_Id, Stop_Iime) VALUES (3, 4, interval '01:25:20' hour to second);
-INSERT INTO MovieHistory (User_Id, Movie_Id, Stop_Iime) VALUES (4, 5, interval '00:29:20' hour to second);
-INSERT INTO MovieHistory (User_Id, Movie_Id, Stop_Iime) VALUES (5, 6, interval '00:20:20' hour to second);
-INSERT INTO MovieHistory (User_Id, Movie_Id, Stop_Iime) VALUES (6, 11, interval '00:15:20' hour to second);
-INSERT INTO MovieHistory (User_Id, Movie_Id, Stop_Iime) VALUES (7, 10, interval '00:05:20' hour to second);
+INSERT INTO Movie_History (User_Id, Movie_Id, Stop_Time) VALUES (1, 1, interval '00:25:20' hour to second);
+INSERT INTO Movie_History (User_Id, Movie_Id, Stop_Time) VALUES (1, 2, interval '00:25:20' hour to second);
+INSERT INTO Movie_History (User_Id, Movie_Id, Stop_Time) VALUES (1, 3, interval '00:25:20' hour to second);
+INSERT INTO Movie_History (User_Id, Movie_Id, Stop_Time) VALUES (1, 4, interval '00:25:20' hour to second);
+INSERT INTO Movie_History (User_Id, Movie_Id, Stop_Time) VALUES (1, 5, interval '00:25:20' hour to second);
+INSERT INTO Movie_History (User_Id, Movie_Id, Stop_Time) VALUES (1, 6, interval '00:25:20' hour to second);
+INSERT INTO Movie_History (User_Id, Movie_Id, Stop_Time) VALUES (2, 3, interval '00:25:20' hour to second);
+INSERT INTO Movie_History (User_Id, Movie_Id, Stop_Time) VALUES (3, 4, interval '01:25:20' hour to second);
+INSERT INTO Movie_History (User_Id, Movie_Id, Stop_Time) VALUES (4, 5, interval '00:29:20' hour to second);
+INSERT INTO Movie_History (User_Id, Movie_Id, Stop_Time) VALUES (5, 6, interval '00:20:20' hour to second);
+INSERT INTO Movie_History (User_Id, Movie_Id, Stop_Time) VALUES (6, 11, interval '00:15:20' hour to second);
+INSERT INTO Movie_History (User_Id, Movie_Id, Stop_Time) VALUES (7, 10, interval '00:05:20' hour to second);
 
 ----------------------------------------------------------------------
 --          Serie
@@ -767,27 +767,28 @@ END;
 
 create sequence Sec_Season maxvalue 9999999 increment by 1 nocycle;
 
-INSERT INTO Serie (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
+INSERT INTO Season (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
     VALUES (Sec_Season.nextval, 14, to_date('2015/11/12', 'yyyy/mm/dd'), '', 10, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
+INSERT INTO Season (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
     VALUES (Sec_Season.nextval, 14, to_date('2016/11/12', 'yyyy/mm/dd'), '', 10, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
+INSERT INTO Season (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
     VALUES (Sec_Season.nextval, 14, to_date('2017/11/12', 'yyyy/mm/dd'), '', 10, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
+INSERT INTO Season (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
     VALUES (Sec_Season.nextval, 14, to_date('2018/11/12', 'yyyy/mm/dd'), '', 10, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
+INSERT INTO Season (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
     VALUES (Sec_Season.nextval, 14, to_date('2019/11/12', 'yyyy/mm/dd'), '', 10, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
+INSERT INTO Season (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
     VALUES (Sec_Season.nextval, 14, to_date('2021/11/12', 'yyyy/mm/dd'), '', 10, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
 
-INSERT INTO Serie (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
+INSERT INTO Season (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
     VALUES (Sec_Season.nextval, 16, to_date('2015/11/12', 'yyyy/mm/dd'), '', 10, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
+INSERT INTO Season (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
     VALUES (Sec_Season.nextval, 16, to_date('2016/11/12', 'yyyy/mm/dd'), '', 10, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
+INSERT INTO Season (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
     VALUES (Sec_Season.nextval, 16, to_date('2017/11/12', 'yyyy/mm/dd'), '', 10, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
+INSERT INTO Season (Id, Serie_Id, Premiere_Date, Name, Chapters, Description) 
     VALUES (Sec_Season.nextval, 16, to_date('2018/11/12', 'yyyy/mm/dd'), '', 10, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+
 
 ----------------------------------------------------------------------
 --          Chapter
@@ -799,39 +800,39 @@ END;
 
 create sequence Sec_Chapter maxvalue 9999999 increment by 1 nocycle;
 
-INSERT INTO Serie (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Description) 
-    VALUES (Sec_Chapter.nextval, 14, 1, 1, 30, 'Chapter 1', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Description) 
-    VALUES (Sec_Chapter.nextval, 14, 1, 2, 30, 'Chapter 2', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Description) 
-    VALUES (Sec_Chapter.nextval, 14, 1, 3, 30, 'Chapter 3', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Description) 
-    VALUES (Sec_Chapter.nextval, 14, 1, 4, 30, 'Chapter 4', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Description) 
-    VALUES (Sec_Chapter.nextval, 14, 1, 5, 30, 'Chapter 5', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Description) 
-    VALUES (Sec_Chapter.nextval, 14, 1, 6, 30, 'Chapter 6', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Description) 
-    VALUES (Sec_Chapter.nextval, 14, 1, 7, 30, 'Chapter 7', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Description) 
-    VALUES (Sec_Chapter.nextval, 14, 1, 8, 30, 'Chapter 8', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Description) 
-    VALUES (Sec_Chapter.nextval, 14, 1, 9, 30, 'Chapter 9', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Description) 
-    VALUES (Sec_Chapter.nextval, 14, 1, 10, 30, 'Chapter 10', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Description) 
-    VALUES (Sec_Chapter.nextval, 14, 2, 1, 30, 'Chapter 1', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+INSERT INTO Chapter (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Age_Restriction_Id, Description) 
+    VALUES (Sec_Chapter.nextval, 14, 1, 1, 30, 'Chapter 1', 3, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+INSERT INTO Chapter (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Age_Restriction_Id, Description) 
+    VALUES (Sec_Chapter.nextval, 14, 1, 2, 30, 'Chapter 2', 3, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+INSERT INTO Chapter (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Age_Restriction_Id, Description) 
+    VALUES (Sec_Chapter.nextval, 14, 1, 3, 30, 'Chapter 3', 3, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+INSERT INTO Chapter (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Age_Restriction_Id, Description) 
+    VALUES (Sec_Chapter.nextval, 14, 1, 4, 30, 'Chapter 4', 3, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+INSERT INTO Chapter (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Age_Restriction_Id, Description) 
+    VALUES (Sec_Chapter.nextval, 14, 1, 5, 30, 'Chapter 5', 3, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+INSERT INTO Chapter (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Age_Restriction_Id, Description) 
+    VALUES (Sec_Chapter.nextval, 14, 1, 6, 30, 'Chapter 6', 3, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+INSERT INTO Chapter (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Age_Restriction_Id, Description) 
+    VALUES (Sec_Chapter.nextval, 14, 1, 7, 30, 'Chapter 7', 3, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+INSERT INTO Chapter (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Age_Restriction_Id, Description) 
+    VALUES (Sec_Chapter.nextval, 14, 1, 8, 30, 'Chapter 8', 3, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+INSERT INTO Chapter (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Age_Restriction_Id, Description) 
+    VALUES (Sec_Chapter.nextval, 14, 1, 9, 30, 'Chapter 9', 3, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+INSERT INTO Chapter (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Age_Restriction_Id, Description) 
+    VALUES (Sec_Chapter.nextval, 14, 1, 10, 30, 'Chapter 10', 4, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+INSERT INTO Chapter (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Age_Restriction_Id, Description) 
+    VALUES (Sec_Chapter.nextval, 14, 2, 1, 30, 'Chapter 1', 1, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
 
-INSERT INTO Serie (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Description) 
-    VALUES (Sec_Chapter.nextval, 16, 1, 1, 30, 'Chapter 1', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Description) 
-    VALUES (Sec_Chapter.nextval, 16, 1, 2, 30, 'Chapter 2', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Description) 
-    VALUES (Sec_Chapter.nextval, 16, 1, 3, 30, 'Chapter 3', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Description) 
-    VALUES (Sec_Chapter.nextval, 16, 1, 4, 30, 'Chapter 4', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
-INSERT INTO Serie (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Description) 
-    VALUES (Sec_Chapter.nextval, 16, 1, 5, 30, 'Chapter 5', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+INSERT INTO Chapter (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Age_Restriction_Id, Description) 
+    VALUES (Sec_Chapter.nextval, 16, 1, 1, 30, 'Chapter 1', 6, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+INSERT INTO Chapter (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Age_Restriction_Id, Description) 
+    VALUES (Sec_Chapter.nextval, 16, 1, 2, 30, 'Chapter 2', 6, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+INSERT INTO Chapter (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Age_Restriction_Id, Description) 
+    VALUES (Sec_Chapter.nextval, 16, 1, 3, 30, 'Chapter 3', 6, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+INSERT INTO Chapter (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Age_Restriction_Id, Description) 
+    VALUES (Sec_Chapter.nextval, 16, 1, 4, 30, 'Chapter 4', 6, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
+INSERT INTO Chapter (Id, Serie_Id, Season_Id, Chapter_Number, Duration, Name, Age_Restriction_Id, Description) 
+    VALUES (Sec_Chapter.nextval, 16, 1, 5, 30, 'Chapter 5', 6, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum soluta quisquam suscipit accusamus voluptatibus doloribus? Vero, excepturi molestias distinctio perspiciatis officia natus reiciendis id, aspernatur eligendi, aliquam hic odit.');
 
 ----------------------------------------------------------------------
 --          Chapter_Director
@@ -904,39 +905,39 @@ BEGIN
 END;
 /
 
-INSERT INTO Chapter_Subtitle (Chapter_Id, Chapter_Subtitle) VALUES (1, 1);
-INSERT INTO Chapter_Subtitle (Chapter_Id, Chapter_Subtitle) VALUES (2, 1);
-INSERT INTO Chapter_Subtitle (Chapter_Id, Chapter_Subtitle) VALUES (3, 1);
-INSERT INTO Chapter_Subtitle (Chapter_Id, Chapter_Subtitle) VALUES (4, 1);
-INSERT INTO Chapter_Subtitle (Chapter_Id, Chapter_Subtitle) VALUES (5, 5);
-INSERT INTO Chapter_Subtitle (Chapter_Id, Chapter_Subtitle) VALUES (6, 6);
-INSERT INTO Chapter_Subtitle (Chapter_Id, Chapter_Subtitle) VALUES (7, 7);
-INSERT INTO Chapter_Subtitle (Chapter_Id, Chapter_Subtitle) VALUES (8, 8);
-INSERT INTO Chapter_Subtitle (Chapter_Id, Chapter_Subtitle) VALUES (9, 9);
-INSERT INTO Chapter_Subtitle (Chapter_Id, Chapter_Subtitle) VALUES (1, 7);
-INSERT INTO Chapter_Subtitle (Chapter_Id, Chapter_Subtitle) VALUES (1, 8);
-INSERT INTO Chapter_Subtitle (Chapter_Id, Chapter_Subtitle) VALUES (1, 9);
+INSERT INTO Chapter_Subtitle (Chapter_Id, Subtitle_Id) VALUES (1, 1);
+INSERT INTO Chapter_Subtitle (Chapter_Id, Subtitle_Id) VALUES (2, 1);
+INSERT INTO Chapter_Subtitle (Chapter_Id, Subtitle_Id) VALUES (3, 1);
+INSERT INTO Chapter_Subtitle (Chapter_Id, Subtitle_Id) VALUES (4, 1);
+INSERT INTO Chapter_Subtitle (Chapter_Id, Subtitle_Id) VALUES (5, 5);
+INSERT INTO Chapter_Subtitle (Chapter_Id, Subtitle_Id) VALUES (6, 6);
+INSERT INTO Chapter_Subtitle (Chapter_Id, Subtitle_Id) VALUES (7, 7);
+INSERT INTO Chapter_Subtitle (Chapter_Id, Subtitle_Id) VALUES (8, 8);
+INSERT INTO Chapter_Subtitle (Chapter_Id, Subtitle_Id) VALUES (9, 9);
+INSERT INTO Chapter_Subtitle (Chapter_Id, Subtitle_Id) VALUES (1, 7);
+INSERT INTO Chapter_Subtitle (Chapter_Id, Subtitle_Id) VALUES (1, 8);
+INSERT INTO Chapter_Subtitle (Chapter_Id, Subtitle_Id) VALUES (1, 9);
 
 ----------------------------------------------------------------------
---          ChapterHistory
+--          Chapter_History
 ----------------------------------------------------------------------
 BEGIN
-  DBMS_OUTPUT.PUT_LINE('ChapterHistory');
+  DBMS_OUTPUT.PUT_LINE('Chapter_History');
 END;
 /
 --5 min and 20 sec.
 
-INSERT INTO ChapterHistory (User_Id, Chapter_Id, Stop_Iime) VALUES (1, 1, interval '00:05:20' hour to second);
-INSERT INTO ChapterHistory (User_Id, Chapter_Id, Stop_Iime) VALUES (1, 2, interval '00:05:20' hour to second);
-INSERT INTO ChapterHistory (User_Id, Chapter_Id, Stop_Iime) VALUES (1, 3, interval '00:05:20' hour to second);
-INSERT INTO ChapterHistory (User_Id, Chapter_Id, Stop_Iime) VALUES (1, 4, interval '00:05:20' hour to second);
-INSERT INTO ChapterHistory (User_Id, Chapter_Id, Stop_Iime) VALUES (1, 5, interval '00:05:20' hour to second);
-INSERT INTO ChapterHistory (User_Id, Chapter_Id, Stop_Iime) VALUES (1, 6, interval '00:05:20' hour to second);
-INSERT INTO ChapterHistory (User_Id, Chapter_Id, Stop_Iime) VALUES (2, 3, interval '00:05:20' hour to second);
-INSERT INTO ChapterHistory (User_Id, Chapter_Id, Stop_Iime) VALUES (3, 4, interval '01:05:20' hour to second);
-INSERT INTO ChapterHistory (User_Id, Chapter_Id, Stop_Iime) VALUES (4, 5, interval '00:09:20' hour to second);
-INSERT INTO ChapterHistory (User_Id, Chapter_Id, Stop_Iime) VALUES (5, 6, interval '00:00:20' hour to second);
-INSERT INTO ChapterHistory (User_Id, Chapter_Id, Stop_Iime) VALUES (6, 11, interval '00:01:20' hour to second);
-INSERT INTO ChapterHistory (User_Id, Chapter_Id, Stop_Iime) VALUES (7, 10, interval '00:05:20' hour to second);
+INSERT INTO Chapter_History (User_Id, Chapter_Id, Stop_Time) VALUES (1, 1, interval '00:05:20' hour to second);
+INSERT INTO Chapter_History (User_Id, Chapter_Id, Stop_Time) VALUES (1, 2, interval '00:05:20' hour to second);
+INSERT INTO Chapter_History (User_Id, Chapter_Id, Stop_Time) VALUES (1, 3, interval '00:05:20' hour to second);
+INSERT INTO Chapter_History (User_Id, Chapter_Id, Stop_Time) VALUES (1, 4, interval '00:05:20' hour to second);
+INSERT INTO Chapter_History (User_Id, Chapter_Id, Stop_Time) VALUES (1, 5, interval '00:05:20' hour to second);
+INSERT INTO Chapter_History (User_Id, Chapter_Id, Stop_Time) VALUES (1, 6, interval '00:05:20' hour to second);
+INSERT INTO Chapter_History (User_Id, Chapter_Id, Stop_Time) VALUES (2, 3, interval '00:05:20' hour to second);
+INSERT INTO Chapter_History (User_Id, Chapter_Id, Stop_Time) VALUES (3, 4, interval '01:05:20' hour to second);
+INSERT INTO Chapter_History (User_Id, Chapter_Id, Stop_Time) VALUES (4, 5, interval '00:09:20' hour to second);
+INSERT INTO Chapter_History (User_Id, Chapter_Id, Stop_Time) VALUES (5, 6, interval '00:00:20' hour to second);
+INSERT INTO Chapter_History (User_Id, Chapter_Id, Stop_Time) VALUES (6, 11, interval '00:01:20' hour to second);
+INSERT INTO Chapter_History (User_Id, Chapter_Id, Stop_Time) VALUES (7, 10, interval '00:05:20' hour to second);
 
 

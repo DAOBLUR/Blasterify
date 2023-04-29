@@ -202,10 +202,10 @@ create table Movie_Subtitle (
     primary key (Movie_Id, Subtitle_Id)
 );
 
-create table MovieHistory (
+create table Movie_History (
     User_Id int not null,
     Movie_Id int not null,
-    Stop_Iime interval day to second not null,
+    Stop_Time interval day to second not null,
     foreign key (User_Id) references User_Client (Id),
     foreign key (Movie_Id) references Movie (Id),
     primary key (User_Id, Movie_Id)
@@ -239,6 +239,8 @@ create table Chapter (
     Description clob,
     Serie_Id int not null,
     Season_Id int not null,
+    Age_Restriction_Id int not null,
+    foreign key (Age_Restriction_Id) references Age_Restriction(Id),
     foreign key (Serie_Id) references Serie (Id),
     foreign key (Season_Id) references Season (Id)
 );
@@ -275,10 +277,10 @@ create table Chapter_Subtitle (
     primary key (Chapter_Id, Subtitle_Id)
 );
 
-create table ChapterHistory (
+create table Chapter_History (
     User_Id int not null,
     Chapter_Id int not null,
-    Stop_Iime interval day to second not null,
+    Stop_Time interval day to second not null,
     foreign key (User_Id) references User_Client (Id),
     foreign key (Chapter_Id) references Chapter (Id),
     primary key (User_Id, Chapter_Id)
