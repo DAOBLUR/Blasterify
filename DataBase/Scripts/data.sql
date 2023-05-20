@@ -16,7 +16,7 @@ insert into Subscription (Id, Name, Price, Features)
     values (Sec_Subscription.nextval, 'Standard', 14.99, 'Unlimited movies, series and without advertising. Watch in Full HD. Rating On. Download enabled.');
 insert into Subscription (Id, Name, Price, Features) 
     values (Sec_Subscription.nextval, 'Premium', 19.99, 'Unlimited movies, series and without advertising. Watch in UltraHD. Download enabled. Rating On. Spatial audio from Blasterify. Access to Music.');
-
+--ejecutado
 ----------------------------------------------------------------------
 --          Country
 ----------------------------------------------------------------------
