@@ -86,6 +86,33 @@ namespace Blasterify.Procedures {
             return json;
         }
 
+        public string GetAll() {
+            string json = "";
+
+
+            OracleConnection oracleConnection = connection.conn();
+
+            oracleConnection.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = oracleConnection;
+
+            OracleParameter oracleParameter = new OracleParameter();
+            oracleParameter.OracleDbType = OracleDbType.RefCursor;
+
+            cmd.CommandText = "Get_All_Subscriptions";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("subscriptions", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+
+            DataSet ds = new DataSet();
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            da.Fill(ds);
+
+            json = JsonConvert.SerializeObject(ds,Formatting.Indented);
+            return json;
+           
+        }
+
         public bool Update(int id, string name, double price, string features) {
             bool result = false;
 

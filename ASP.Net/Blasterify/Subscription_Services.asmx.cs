@@ -25,11 +25,14 @@ namespace Blasterify
         [WebMethod]
         public bool Create(string name, double price, string features) 
             => subscription_CRUD.Create(name, price, features);
-        
 
         [WebMethod]
         public string Get(int id)
             => subscription_CRUD.Get(id);
+
+        [WebMethod]
+        public string GetAll()
+            => subscription_CRUD.GetAll();
 
         [WebMethod]
         public bool Update(int id, string name, double price, string features)
