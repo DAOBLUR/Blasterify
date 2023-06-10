@@ -9,7 +9,7 @@ create table Country (
     Id varchar(4) not null primary key,
     Name varchar(30) not null
 );
-
+--ejecutado
 create table User_Client (
     Id int not null primary key,
     Name varchar(40),

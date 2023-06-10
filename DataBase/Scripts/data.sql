@@ -16,14 +16,13 @@ insert into Subscription (Id, Name, Price, Features)
     values (Sec_Subscription.nextval, 'Standard', 14.99, 'Unlimited movies, series and without advertising. Watch in Full HD. Rating On. Download enabled.');
 insert into Subscription (Id, Name, Price, Features) 
     values (Sec_Subscription.nextval, 'Premium', 19.99, 'Unlimited movies, series and without advertising. Watch in UltraHD. Download enabled. Rating On. Spatial audio from Blasterify. Access to Music.');
---ejecutado
+
 ----------------------------------------------------------------------
 --          Country
 ----------------------------------------------------------------------
 BEGIN
   DBMS_OUTPUT.PUT_LINE('Country');
 END;
-/
 
 create sequence Sec_Country maxvalue 9999999 increment by 1 nocycle;
 
@@ -50,6 +49,7 @@ create sequence Sec_User maxvalue 9999999 increment by 1 nocycle;
 
 insert into User_Client (Id, Name, Card_Number, Status, Email, Password, Subscription_Date, Id_Subscription, Id_Country) 
     values (Sec_User.nextval, 'Juan Perez', '', 1, 'juanperez@gmail.com', 'Xasfasf_564s6dgs_Fr55G5_a4sf6AFA6S5_4F', to_date('01012022','ddmmyyyy'), 1, 1);
+
 insert into User_Client (Id, Name, Card_Number, Status, Email, Password, Subscription_Date, Id_Subscription, Id_Country) 
     values (Sec_User.nextval, 'Ana Garcia', '9876543213213211', 1, 'anagarcia@gmail.com', 'Xasfasf_564s6dgs_Fr55G5_a4sf6AFA6S5_4F', to_date('01012022','ddmmyyyy'), 2, 2);
 insert into User_Client (Id, Name, Card_Number, Status, Email, Password, Subscription_Date, Id_Subscription, Id_Country) 
@@ -81,7 +81,7 @@ insert into User_Client (Id, Name, Card_Number, Status, Email, Password, Subscri
 BEGIN
   DBMS_OUTPUT.PUT_LINE('Genre');
 END;
-/
+
 
 create sequence Sec_Genre maxvalue 9999999 increment by 1 nocycle;
 
@@ -104,7 +104,6 @@ insert into Genre (Id, Name) values (Sec_Genre.nextval, 'Western');
 BEGIN
   DBMS_OUTPUT.PUT_LINE('Director');
 END;
-/
 
 create sequence Sec_Director maxvalue 9999999 increment by 1 nocycle;
 
@@ -173,7 +172,7 @@ INSERT INTO Actor (Id, Name) VALUES (Sec_Actor.nextval, 'Saoirse Ronan');
 BEGIN
   DBMS_OUTPUT.PUT_LINE('Character');
 END;
-/
+
 
 create sequence Sec_Character maxvalue 9999999 increment by 1 nocycle;
 
@@ -189,7 +188,7 @@ INSERT INTO Character (Id, Name) VALUES (Sec_Character.nextval, 'Princess Leia')
 INSERT INTO Character (Id, Name) VALUES (Sec_Character.nextval, 'Darth Vader');
 INSERT INTO Character (Id, Name) VALUES (Sec_Character.nextval, 'Neo');
 INSERT INTO Character (Id, Name) VALUES (Sec_Character.nextval, 'Morpheus');
-
+--execute
 ----------------------------------------------------------------------
 --          Character_Actor
 ----------------------------------------------------------------------

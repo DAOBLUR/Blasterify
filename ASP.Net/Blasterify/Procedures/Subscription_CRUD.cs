@@ -87,9 +87,6 @@ namespace Blasterify.Procedures {
         }
 
         public string GetAll() {
-            string json = "";
-
-
             OracleConnection oracleConnection = connection.conn();
 
             oracleConnection.Open();
@@ -108,8 +105,7 @@ namespace Blasterify.Procedures {
             OracleDataAdapter da = new OracleDataAdapter(cmd);
             da.Fill(ds);
 
-            json = JsonConvert.SerializeObject(ds,Formatting.Indented);
-            return json;
+            return JsonConvert.SerializeObject(ds,Formatting.Indented);
            
         }
 
