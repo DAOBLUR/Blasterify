@@ -33,6 +33,19 @@ namespace BlasterifyAdmin {
             }
         }
 
+        private bool Delete(int id) {
+            var result = false;
+            try {
+                result = conecction.Delete(id);
+            }
+            catch (Exception ex) {
+                result = false;
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", $"alert ({ex.Message});", true);
+            }
+
+            return result;
+        }
+
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
                 SubscriptionsGridView.DataSource = GetAll();
@@ -47,10 +60,12 @@ namespace BlasterifyAdmin {
             }
             else if (e.CommandName == "Update") {
                 int index = Convert.ToInt32(e.CommandArgument);
+                Response.Redirect($"Forms/Subscription/UpdateSubscription.aspx?Id={index}");
             }
             else if (e.CommandName == "Delete") {
                 int index = Convert.ToInt32(e.CommandArgument);
-                
+                Delete(index);
+                SubscriptionsGridView.DataBind();
             }
         }
 
@@ -63,17 +78,5 @@ namespace BlasterifyAdmin {
         {
         }
 
-        private bool Delete(int id) {
-            var result = false;
-            try {
-                result = conecction.Delete(id);
-            }
-            catch (Exception ex) {
-                result = false;
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", $"alert ({ex.Message});", true);
-            }
-
-            return result;
-        }
     }
 }

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="E:\universidad\semester6\SoftwareProcesses\Blasterify\ASP.Net\Blasterify\obj\ARM64\Release\Package\PackageTmp" />
+  <setAcl path="E:\universidad\semester6\SoftwareProcesses\Blasterify\ASP.Net\Blasterify\obj\ARM64\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="E:\universidad\semester6\SoftwareProcesses\Blasterify\ASP.Net\Blasterify\obj\ARM64\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>
