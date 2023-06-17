@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace BlasterifyAdmin.Forms.Subscription {
     public partial class UpdateSubscription : System.Web.UI.Page {
-        Subscription_ServicesSoapClient conecction = new Subscription_ServicesSoapClient();
+        SubscriptionServicesSoapClient conecction = new SubscriptionServicesSoapClient("SubscriptionServicesSoap");
         private static int Id { get; set; } = 0;
 
         private Models.Subscription Get(int id)
@@ -49,8 +49,6 @@ namespace BlasterifyAdmin.Forms.Subscription {
         }
 
         protected void UpdateBtn_Click(object sender, EventArgs e) {
-            bool result = false;
-
             try {
                 conecction.Update(Id, NameTextBox.Text, double.Parse(PriceTextBox.Text), FeaturesTextBox.Text);
                 NameTextBox.Text = PriceTextBox.Text = FeaturesTextBox.Text = string.Empty;

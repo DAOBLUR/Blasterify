@@ -12,126 +12,80 @@ namespace BlasterifyAdmin.UserServices {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserServices.Users_ServicesSoap")]
-    public interface Users_ServicesSoap {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserServices.UserServicesSoap")]
+    public interface UserServicesSoap {
         
-        // CODEGEN: Generating message contract since element name GetAllResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Create", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool Create(string name, string card_number, string email, string password, int id_subscription, int id_country);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Create", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> CreateAsync(string name, string card_number, string email, string password, int id_subscription, int id_country);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Get", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string Get(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Get", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> GetAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAll", ReplyAction="*")]
-        BlasterifyAdmin.UserServices.GetAllResponse GetAll(BlasterifyAdmin.UserServices.GetAllRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string GetAll();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAll", ReplyAction="*")]
-        System.Threading.Tasks.Task<BlasterifyAdmin.UserServices.GetAllResponse> GetAllAsync(BlasterifyAdmin.UserServices.GetAllRequest request);
+        System.Threading.Tasks.Task<string> GetAllAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface UserServicesSoapChannel : BlasterifyAdmin.UserServices.UserServicesSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetAllRequest {
+    public partial class UserServicesSoapClient : System.ServiceModel.ClientBase<BlasterifyAdmin.UserServices.UserServicesSoap>, BlasterifyAdmin.UserServices.UserServicesSoap {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAll", Namespace="http://tempuri.org/", Order=0)]
-        public BlasterifyAdmin.UserServices.GetAllRequestBody Body;
-        
-        public GetAllRequest() {
+        public UserServicesSoapClient() {
         }
         
-        public GetAllRequest(BlasterifyAdmin.UserServices.GetAllRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class GetAllRequestBody {
-        
-        public GetAllRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetAllResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BlasterifyAdmin.UserServices.GetAllResponseBody Body;
-        
-        public GetAllResponse() {
-        }
-        
-        public GetAllResponse(BlasterifyAdmin.UserServices.GetAllResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetAllResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string GetAllResult;
-        
-        public GetAllResponseBody() {
-        }
-        
-        public GetAllResponseBody(string GetAllResult) {
-            this.GetAllResult = GetAllResult;
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface Users_ServicesSoapChannel : BlasterifyAdmin.UserServices.Users_ServicesSoap, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Users_ServicesSoapClient : System.ServiceModel.ClientBase<BlasterifyAdmin.UserServices.Users_ServicesSoap>, BlasterifyAdmin.UserServices.Users_ServicesSoap {
-        
-        public Users_ServicesSoapClient() {
-        }
-        
-        public Users_ServicesSoapClient(string endpointConfigurationName) : 
+        public UserServicesSoapClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public Users_ServicesSoapClient(string endpointConfigurationName, string remoteAddress) : 
+        public UserServicesSoapClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Users_ServicesSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public UserServicesSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Users_ServicesSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public UserServicesSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BlasterifyAdmin.UserServices.GetAllResponse BlasterifyAdmin.UserServices.Users_ServicesSoap.GetAll(BlasterifyAdmin.UserServices.GetAllRequest request) {
-            return base.Channel.GetAll(request);
+        public bool Create(string name, string card_number, string email, string password, int id_subscription, int id_country) {
+            return base.Channel.Create(name, card_number, email, password, id_subscription, id_country);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CreateAsync(string name, string card_number, string email, string password, int id_subscription, int id_country) {
+            return base.Channel.CreateAsync(name, card_number, email, password, id_subscription, id_country);
+        }
+        
+        public string Get(int id) {
+            return base.Channel.Get(id);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetAsync(int id) {
+            return base.Channel.GetAsync(id);
         }
         
         public string GetAll() {
-            BlasterifyAdmin.UserServices.GetAllRequest inValue = new BlasterifyAdmin.UserServices.GetAllRequest();
-            inValue.Body = new BlasterifyAdmin.UserServices.GetAllRequestBody();
-            BlasterifyAdmin.UserServices.GetAllResponse retVal = ((BlasterifyAdmin.UserServices.Users_ServicesSoap)(this)).GetAll(inValue);
-            return retVal.Body.GetAllResult;
+            return base.Channel.GetAll();
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BlasterifyAdmin.UserServices.GetAllResponse> BlasterifyAdmin.UserServices.Users_ServicesSoap.GetAllAsync(BlasterifyAdmin.UserServices.GetAllRequest request) {
-            return base.Channel.GetAllAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BlasterifyAdmin.UserServices.GetAllResponse> GetAllAsync() {
-            BlasterifyAdmin.UserServices.GetAllRequest inValue = new BlasterifyAdmin.UserServices.GetAllRequest();
-            inValue.Body = new BlasterifyAdmin.UserServices.GetAllRequestBody();
-            return ((BlasterifyAdmin.UserServices.Users_ServicesSoap)(this)).GetAllAsync(inValue);
+        public System.Threading.Tasks.Task<string> GetAllAsync() {
+            return base.Channel.GetAllAsync();
         }
     }
 }

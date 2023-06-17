@@ -11,7 +11,7 @@ namespace BlasterifyAdmin
 {
     public partial class CreateSubscription : System.Web.UI.Page
     {
-        Subscription_ServicesSoapClient conecction = new Subscription_ServicesSoapClient();
+        SubscriptionServicesSoapClient conecction = new SubscriptionServicesSoapClient("SubscriptionServicesSoap");
         protected void Page_Load(object sender, EventArgs e)
         {
             ResultLabel.Visible = ResultLabel2.Visible = false;

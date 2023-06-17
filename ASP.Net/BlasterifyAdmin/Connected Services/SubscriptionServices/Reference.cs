@@ -12,462 +12,102 @@ namespace BlasterifyAdmin.SubscriptionServices {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SubscriptionServices.Subscription_ServicesSoap")]
-    public interface Subscription_ServicesSoap {
-        
-        // CODEGEN: Generating message contract since element name name from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Create", ReplyAction="*")]
-        BlasterifyAdmin.SubscriptionServices.CreateResponse Create(BlasterifyAdmin.SubscriptionServices.CreateRequest request);
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SubscriptionServices.SubscriptionServicesSoap")]
+    public interface SubscriptionServicesSoap {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Create", ReplyAction="*")]
-        System.Threading.Tasks.Task<BlasterifyAdmin.SubscriptionServices.CreateResponse> CreateAsync(BlasterifyAdmin.SubscriptionServices.CreateRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool Create(string name, double price, string features);
         
-        // CODEGEN: Generating message contract since element name GetResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Create", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> CreateAsync(string name, double price, string features);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Get", ReplyAction="*")]
-        BlasterifyAdmin.SubscriptionServices.GetResponse Get(BlasterifyAdmin.SubscriptionServices.GetRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string Get(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Get", ReplyAction="*")]
-        System.Threading.Tasks.Task<BlasterifyAdmin.SubscriptionServices.GetResponse> GetAsync(BlasterifyAdmin.SubscriptionServices.GetRequest request);
-        
-        // CODEGEN: Generating message contract since element name GetAllResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAll", ReplyAction="*")]
-        BlasterifyAdmin.SubscriptionServices.GetAllResponse GetAll(BlasterifyAdmin.SubscriptionServices.GetAllRequest request);
+        System.Threading.Tasks.Task<string> GetAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAll", ReplyAction="*")]
-        System.Threading.Tasks.Task<BlasterifyAdmin.SubscriptionServices.GetAllResponse> GetAllAsync(BlasterifyAdmin.SubscriptionServices.GetAllRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string GetAll();
         
-        // CODEGEN: Generating message contract since element name name from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Update", ReplyAction="*")]
-        BlasterifyAdmin.SubscriptionServices.UpdateResponse Update(BlasterifyAdmin.SubscriptionServices.UpdateRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAll", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> GetAllAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Update", ReplyAction="*")]
-        System.Threading.Tasks.Task<BlasterifyAdmin.SubscriptionServices.UpdateResponse> UpdateAsync(BlasterifyAdmin.SubscriptionServices.UpdateRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool Update(int id, string name, double price, string features);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Update", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> UpdateAsync(int id, string name, double price, string features);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Delete", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         bool Delete(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Delete", ReplyAction="*")]
         System.Threading.Tasks.Task<bool> DeleteAsync(int id);
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Create", Namespace="http://tempuri.org/", Order=0)]
-        public BlasterifyAdmin.SubscriptionServices.CreateRequestBody Body;
-        
-        public CreateRequest() {
-        }
-        
-        public CreateRequest(BlasterifyAdmin.SubscriptionServices.CreateRequestBody Body) {
-            this.Body = Body;
-        }
+    public interface SubscriptionServicesSoapChannel : BlasterifyAdmin.SubscriptionServices.SubscriptionServicesSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class CreateRequestBody {
+    public partial class SubscriptionServicesSoapClient : System.ServiceModel.ClientBase<BlasterifyAdmin.SubscriptionServices.SubscriptionServicesSoap>, BlasterifyAdmin.SubscriptionServices.SubscriptionServicesSoap {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string name;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public double price;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string features;
-        
-        public CreateRequestBody() {
+        public SubscriptionServicesSoapClient() {
         }
         
-        public CreateRequestBody(string name, double price, string features) {
-            this.name = name;
-            this.price = price;
-            this.features = features;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BlasterifyAdmin.SubscriptionServices.CreateResponseBody Body;
-        
-        public CreateResponse() {
-        }
-        
-        public CreateResponse(BlasterifyAdmin.SubscriptionServices.CreateResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class CreateResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public bool CreateResult;
-        
-        public CreateResponseBody() {
-        }
-        
-        public CreateResponseBody(bool CreateResult) {
-            this.CreateResult = CreateResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Get", Namespace="http://tempuri.org/", Order=0)]
-        public BlasterifyAdmin.SubscriptionServices.GetRequestBody Body;
-        
-        public GetRequest() {
-        }
-        
-        public GetRequest(BlasterifyAdmin.SubscriptionServices.GetRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int id;
-        
-        public GetRequestBody() {
-        }
-        
-        public GetRequestBody(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BlasterifyAdmin.SubscriptionServices.GetResponseBody Body;
-        
-        public GetResponse() {
-        }
-        
-        public GetResponse(BlasterifyAdmin.SubscriptionServices.GetResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string GetResult;
-        
-        public GetResponseBody() {
-        }
-        
-        public GetResponseBody(string GetResult) {
-            this.GetResult = GetResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetAllRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAll", Namespace="http://tempuri.org/", Order=0)]
-        public BlasterifyAdmin.SubscriptionServices.GetAllRequestBody Body;
-        
-        public GetAllRequest() {
-        }
-        
-        public GetAllRequest(BlasterifyAdmin.SubscriptionServices.GetAllRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class GetAllRequestBody {
-        
-        public GetAllRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetAllResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BlasterifyAdmin.SubscriptionServices.GetAllResponseBody Body;
-        
-        public GetAllResponse() {
-        }
-        
-        public GetAllResponse(BlasterifyAdmin.SubscriptionServices.GetAllResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetAllResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string GetAllResult;
-        
-        public GetAllResponseBody() {
-        }
-        
-        public GetAllResponseBody(string GetAllResult) {
-            this.GetAllResult = GetAllResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class UpdateRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Update", Namespace="http://tempuri.org/", Order=0)]
-        public BlasterifyAdmin.SubscriptionServices.UpdateRequestBody Body;
-        
-        public UpdateRequest() {
-        }
-        
-        public UpdateRequest(BlasterifyAdmin.SubscriptionServices.UpdateRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class UpdateRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int id;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string name;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public double price;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string features;
-        
-        public UpdateRequestBody() {
-        }
-        
-        public UpdateRequestBody(int id, string name, double price, string features) {
-            this.id = id;
-            this.name = name;
-            this.price = price;
-            this.features = features;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class UpdateResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BlasterifyAdmin.SubscriptionServices.UpdateResponseBody Body;
-        
-        public UpdateResponse() {
-        }
-        
-        public UpdateResponse(BlasterifyAdmin.SubscriptionServices.UpdateResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class UpdateResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public bool UpdateResult;
-        
-        public UpdateResponseBody() {
-        }
-        
-        public UpdateResponseBody(bool UpdateResult) {
-            this.UpdateResult = UpdateResult;
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface Subscription_ServicesSoapChannel : BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Subscription_ServicesSoapClient : System.ServiceModel.ClientBase<BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap>, BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap {
-        
-        public Subscription_ServicesSoapClient() {
-        }
-        
-        public Subscription_ServicesSoapClient(string endpointConfigurationName) : 
+        public SubscriptionServicesSoapClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public Subscription_ServicesSoapClient(string endpointConfigurationName, string remoteAddress) : 
+        public SubscriptionServicesSoapClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Subscription_ServicesSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public SubscriptionServicesSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Subscription_ServicesSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public SubscriptionServicesSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BlasterifyAdmin.SubscriptionServices.CreateResponse BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap.Create(BlasterifyAdmin.SubscriptionServices.CreateRequest request) {
-            return base.Channel.Create(request);
-        }
-        
         public bool Create(string name, double price, string features) {
-            BlasterifyAdmin.SubscriptionServices.CreateRequest inValue = new BlasterifyAdmin.SubscriptionServices.CreateRequest();
-            inValue.Body = new BlasterifyAdmin.SubscriptionServices.CreateRequestBody();
-            inValue.Body.name = name;
-            inValue.Body.price = price;
-            inValue.Body.features = features;
-            BlasterifyAdmin.SubscriptionServices.CreateResponse retVal = ((BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap)(this)).Create(inValue);
-            return retVal.Body.CreateResult;
+            return base.Channel.Create(name, price, features);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BlasterifyAdmin.SubscriptionServices.CreateResponse> BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap.CreateAsync(BlasterifyAdmin.SubscriptionServices.CreateRequest request) {
-            return base.Channel.CreateAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BlasterifyAdmin.SubscriptionServices.CreateResponse> CreateAsync(string name, double price, string features) {
-            BlasterifyAdmin.SubscriptionServices.CreateRequest inValue = new BlasterifyAdmin.SubscriptionServices.CreateRequest();
-            inValue.Body = new BlasterifyAdmin.SubscriptionServices.CreateRequestBody();
-            inValue.Body.name = name;
-            inValue.Body.price = price;
-            inValue.Body.features = features;
-            return ((BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap)(this)).CreateAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BlasterifyAdmin.SubscriptionServices.GetResponse BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap.Get(BlasterifyAdmin.SubscriptionServices.GetRequest request) {
-            return base.Channel.Get(request);
+        public System.Threading.Tasks.Task<bool> CreateAsync(string name, double price, string features) {
+            return base.Channel.CreateAsync(name, price, features);
         }
         
         public string Get(int id) {
-            BlasterifyAdmin.SubscriptionServices.GetRequest inValue = new BlasterifyAdmin.SubscriptionServices.GetRequest();
-            inValue.Body = new BlasterifyAdmin.SubscriptionServices.GetRequestBody();
-            inValue.Body.id = id;
-            BlasterifyAdmin.SubscriptionServices.GetResponse retVal = ((BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap)(this)).Get(inValue);
-            return retVal.Body.GetResult;
+            return base.Channel.Get(id);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BlasterifyAdmin.SubscriptionServices.GetResponse> BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap.GetAsync(BlasterifyAdmin.SubscriptionServices.GetRequest request) {
-            return base.Channel.GetAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BlasterifyAdmin.SubscriptionServices.GetResponse> GetAsync(int id) {
-            BlasterifyAdmin.SubscriptionServices.GetRequest inValue = new BlasterifyAdmin.SubscriptionServices.GetRequest();
-            inValue.Body = new BlasterifyAdmin.SubscriptionServices.GetRequestBody();
-            inValue.Body.id = id;
-            return ((BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap)(this)).GetAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BlasterifyAdmin.SubscriptionServices.GetAllResponse BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap.GetAll(BlasterifyAdmin.SubscriptionServices.GetAllRequest request) {
-            return base.Channel.GetAll(request);
+        public System.Threading.Tasks.Task<string> GetAsync(int id) {
+            return base.Channel.GetAsync(id);
         }
         
         public string GetAll() {
-            BlasterifyAdmin.SubscriptionServices.GetAllRequest inValue = new BlasterifyAdmin.SubscriptionServices.GetAllRequest();
-            inValue.Body = new BlasterifyAdmin.SubscriptionServices.GetAllRequestBody();
-            BlasterifyAdmin.SubscriptionServices.GetAllResponse retVal = ((BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap)(this)).GetAll(inValue);
-            return retVal.Body.GetAllResult;
+            return base.Channel.GetAll();
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BlasterifyAdmin.SubscriptionServices.GetAllResponse> BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap.GetAllAsync(BlasterifyAdmin.SubscriptionServices.GetAllRequest request) {
-            return base.Channel.GetAllAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BlasterifyAdmin.SubscriptionServices.GetAllResponse> GetAllAsync() {
-            BlasterifyAdmin.SubscriptionServices.GetAllRequest inValue = new BlasterifyAdmin.SubscriptionServices.GetAllRequest();
-            inValue.Body = new BlasterifyAdmin.SubscriptionServices.GetAllRequestBody();
-            return ((BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap)(this)).GetAllAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BlasterifyAdmin.SubscriptionServices.UpdateResponse BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap.Update(BlasterifyAdmin.SubscriptionServices.UpdateRequest request) {
-            return base.Channel.Update(request);
+        public System.Threading.Tasks.Task<string> GetAllAsync() {
+            return base.Channel.GetAllAsync();
         }
         
         public bool Update(int id, string name, double price, string features) {
-            BlasterifyAdmin.SubscriptionServices.UpdateRequest inValue = new BlasterifyAdmin.SubscriptionServices.UpdateRequest();
-            inValue.Body = new BlasterifyAdmin.SubscriptionServices.UpdateRequestBody();
-            inValue.Body.id = id;
-            inValue.Body.name = name;
-            inValue.Body.price = price;
-            inValue.Body.features = features;
-            BlasterifyAdmin.SubscriptionServices.UpdateResponse retVal = ((BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap)(this)).Update(inValue);
-            return retVal.Body.UpdateResult;
+            return base.Channel.Update(id, name, price, features);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BlasterifyAdmin.SubscriptionServices.UpdateResponse> BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap.UpdateAsync(BlasterifyAdmin.SubscriptionServices.UpdateRequest request) {
-            return base.Channel.UpdateAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BlasterifyAdmin.SubscriptionServices.UpdateResponse> UpdateAsync(int id, string name, double price, string features) {
-            BlasterifyAdmin.SubscriptionServices.UpdateRequest inValue = new BlasterifyAdmin.SubscriptionServices.UpdateRequest();
-            inValue.Body = new BlasterifyAdmin.SubscriptionServices.UpdateRequestBody();
-            inValue.Body.id = id;
-            inValue.Body.name = name;
-            inValue.Body.price = price;
-            inValue.Body.features = features;
-            return ((BlasterifyAdmin.SubscriptionServices.Subscription_ServicesSoap)(this)).UpdateAsync(inValue);
+        public System.Threading.Tasks.Task<bool> UpdateAsync(int id, string name, double price, string features) {
+            return base.Channel.UpdateAsync(id, name, price, features);
         }
         
         public bool Delete(int id) {

@@ -9,9 +9,10 @@ create table Country (
     Id varchar(4) not null primary key,
     Name varchar(30) not null
 );
---ejecutado
+
 create table User_Client (
     Id int not null primary key,
+    Firebase_UID varchar(30) not null unique,
     Name varchar(40),
     Card_Number varchar(16),
     Status number(1) not null,
@@ -23,7 +24,7 @@ create table User_Client (
     foreign key (Id_Subscription) references Subscription (Id),
     foreign key (Id_Country) references Country (Id)
 );
-
+--ejecutado
 create table Genre (
     Id int not null primary key,
     Name varchar(20)

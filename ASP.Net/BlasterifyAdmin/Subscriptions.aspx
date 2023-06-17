@@ -32,15 +32,6 @@
 
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:LinkButton runat="server" CommandName="Select" CommandArgument='<%#Eval("Id")%>'
-                        CssClass="btn btn-sm btn-primary" Font-Bold="True" 
-                        Style="margin: 0 5px; color: #FFF; padding: 5px 10px; border-radius: 5px;" 
-                        >Select</asp:LinkButton>
-                </ItemTemplate>
-            </asp:TemplateField>
-
-            <asp:TemplateField>
-                <ItemTemplate>
                     <asp:LinkButton runat="server" CommandName="Update" CommandArgument='<%#Eval("Id")%>'
                         CssClass="btn btn-sm btn-warning" Font-Bold="True" 
                         Style="margin: 0 5px; color: #000; padding: 5px 10px; border-radius: 5px;" 
@@ -50,8 +41,8 @@
 
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:LinkButton runat="server" CommandName="Delete" CommandArgument='<%#Eval("Id")%>'
-                        CssClass="btn btn-sm btn-danger" Font-Bold="True" 
+                    <asp:LinkButton runat="server" CommandArgument='<%#Eval("Id")%>' OnClick="Delete_Click"
+                        CssClass="btn btn-sm btn-danger" OnClientClick="return confirm('Do you want to delete?')" Font-Bold="True" 
                         Style="margin: 0 5px; color: #FFF; padding: 5px 10px; border-radius: 5px;" 
                         >Delete</asp:LinkButton>
                 </ItemTemplate>

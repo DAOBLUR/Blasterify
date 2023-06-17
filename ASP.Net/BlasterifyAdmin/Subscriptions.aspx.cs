@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 namespace BlasterifyAdmin {
     public partial class Subscriptions : System.Web.UI.Page {
-        Subscription_ServicesSoapClient conecction = new Subscription_ServicesSoapClient();
+        SubscriptionServicesSoapClient conecction = new SubscriptionServicesSoapClient("SubscriptionServicesSoap");
 
         private List<Subscription> GetAll() {
             var result = string.Empty;
@@ -64,8 +64,11 @@ namespace BlasterifyAdmin {
             }
             else if (e.CommandName == "Delete") {
                 int index = Convert.ToInt32(e.CommandArgument);
-                Delete(index);
-                SubscriptionsGridView.DataBind();
+                if (Delete(index))
+                {
+                    SubscriptionsGridView.DataSource = GetAll();
+                    SubscriptionsGridView.DataBind();
+                }
             }
         }
 
@@ -76,6 +79,18 @@ namespace BlasterifyAdmin {
 
         protected void SearchBtn_Click(object sender, EventArgs e)
         {
+        }
+
+        protected void Delete_Click(object sender, EventArgs e)
+        {
+            LinkButton button = (LinkButton)sender;
+
+            int index = Convert.ToInt32(button.CommandArgument);
+            if (Delete(index))
+            {
+                SubscriptionsGridView.DataSource = GetAll();
+                SubscriptionsGridView.DataBind();
+            }
         }
 
     }

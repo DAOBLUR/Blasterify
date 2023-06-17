@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using Oracle.DataAccess.Client;
-using Oracle.DataAccess.Types;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -100,7 +100,7 @@ namespace Blasterify.DataAccess {
                         using (OracleDataAdapter adapter = new OracleDataAdapter(command)) {
                             adapter.Fill(dataSet);
                         }
-
+                        oracleConnection.Close();
                         return JsonConvert.SerializeObject(dataSet, Formatting.Indented);
                     }
                 }

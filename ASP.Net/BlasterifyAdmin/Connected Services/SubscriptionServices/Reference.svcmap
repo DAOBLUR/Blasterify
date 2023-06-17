@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="83dc990e-54cd-4f85-ba0d-f680a7e02d97" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="43508063-9d2f-41d2-b183-8291e99bf4a1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://localhost:44355/Subscription_Services.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://localhost:44363/WebServices/SubscriptionServices.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Subscription_Services.wsdl" MetadataType="Wsdl" ID="d8912688-d600-4977-b82c-31dfadce8a7f" SourceId="1" SourceUrl="https://localhost:44355/Subscription_Services.asmx?wsdl" />
-    <MetadataFile FileName="Subscription_Services.disco" MetadataType="Disco" ID="92a03456-ef2d-4a8e-87ad-8caadc16fe40" SourceId="1" SourceUrl="https://localhost:44355/Subscription_Services.asmx?disco" />
+    <MetadataFile FileName="SubscriptionServices.wsdl" MetadataType="Wsdl" ID="301bff29-1257-4f52-b990-979065f76276" SourceId="1" SourceUrl="https://localhost:44363/WebServices/SubscriptionServices.asmx?wsdl" />
+    <MetadataFile FileName="SubscriptionServices.disco" MetadataType="Disco" ID="661db654-6a84-482b-be3d-9903bb6ceb9b" SourceId="1" SourceUrl="https://localhost:44363/WebServices/SubscriptionServices.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

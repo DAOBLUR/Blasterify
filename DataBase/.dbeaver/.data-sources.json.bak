@@ -1,30 +1,10 @@
 {
 	"folders": {},
 	"connections": {
-		"oracle_thin-188a652683e-3c1dc59052c17b3f": {
-			"provider": "oracle-ee",
-			"driver": "oracle_thin",
-			"name": "localhost",
-			"save-password": true,
-			"configuration": {
-				"host": "localhost",
-				"port": "1521",
-				"database": "xe",
-				"url": "jdbc:oracle:thin:@//localhost:1521/xe",
-				"configurationType": "MANUAL",
-				"home": "E:\\Oracle\\XE21c\\dbhomeXE",
-				"type": "dev",
-				"provider-properties": {
-					"@dbeaver-connection-type@": "BASIC",
-					"@dbeaver-sid-service@": "SERVICE"
-				},
-				"auth-model": "oracle_native"
-			}
-		},
 		"oracle_thin-188ad75d213-9f90ceb33c7f8e3": {
 			"provider": "oracle",
 			"driver": "oracle_thin",
-			"name": "localhost 2",
+			"name": "Blasterify",
 			"save-password": true,
 			"configuration": {
 				"host": "localhost",
